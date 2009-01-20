@@ -1,8 +1,0 @@
-Developed by Carlos Barbosa at Avantvision.net
-
-Ask access to the planet api
-Upload everything to a new folder
-Edit config.php with your orbit api username password and your hardware id
-If you don't know your hardware id write you ip in config and visity hwype.php in your browser there you should see a 5 digit code, go back to config write that number where it's supposed to and visit index.php
-
-
