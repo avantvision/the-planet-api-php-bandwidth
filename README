@@ -1,0 +1,22 @@
+
+Installation:
+
+Download, decompress, upload to a php enabled server, upload everything to a new folder just to make sure...
+
+Edit config.php
+
+put your orbit api username, password, hardware id ( if you don't know it don't worry) and your ip address...
+
+if you don't know your hardware id, write your ip adress in config.php and visit hwtype.php there you should see a 5 digit code, that's your hardware id, go back to config.php and write that digit where it's supposed to.
+
+That's it..!!
+
+Visit now index.php and see your bandwidth graphics..!!!
+
+
+Thanks to the planet staff and the guys at php freenode irc channel.
+
+I encourage you to work upon this and make it better.
+
+Carlos Barbosa
+Avantvision.net
