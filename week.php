@@ -1,0 +1,41 @@
+<?php 
+
+ini_set('soap.wsdl_cache_enabled', false);  
+
+$gb_url = 'https://api.theplanet.com/Svc/HardwareBandwidthService.svc?WSDL'; 
+
+include("config.php");
+        
+$params= array( 
+        "HardwareID" => $hwid,
+        "StartDate" => date('Y-m-d',strtotime("-7 days")),
+        "EndDate" => date("Y-m-d")
+       ); 
+
+$hw_bw_svc = new SoapClient($gb_url, $paramsurl); 
+
+$bwbyrange = $hw_bw_svc->GetBandwidthTotalByRange(new SoapParam($params,"params")); 
+
+$bwthismonth = ($bwbyrange->ActualUsage);
+$bwallowed = ($bwbyrange->AllowedUsage);
+
+echo '<p>';
+echo 'Bandwidth used last 7 days:&nbsp;'; 
+echo round($bwthismonth/1000000,3);
+echo 'MB';
+echo '</p>';
+
+echo '<p>';
+echo 'Period:&nbsp;'; 
+echo date('Y-m-d',strtotime("-7 days"));
+echo '&nbsp;-&nbsp;'; 
+echo date("Y-m-d");
+echo '</p>';
+
+
+
+
+echo '<p>';
+echo '<img src="imageweekly.php">';
+echo '</p>';
+?>
